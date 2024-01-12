@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-primecarApp-primecarAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-primecarApp-primecarAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		4A4E61D165DF4B109F71C155 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A644BCF2BF94114AA62DCBB /* logo.png */; };
+		C1A33830A96A4BBABAD5FC73 /* nointernet.png in Resources */ = {isa = PBXBuildFile; fileRef = CACA0DBD58B74594987EB111 /* nointernet.png */; };
+		6DC95E9D9A92447A9021529D /* onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B9327647DC4DFEA8B23677 /* onboard1.png */; };
+		95BE1C4557F340F5A5588095 /* onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2118EB8F214572BC70CC4A /* onboard2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = primecarApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-primecarApp-primecarAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-primecarApp-primecarAppTests.release.xcconfig"; path = "Target Support Files/Pods-primecarApp-primecarAppTests/Pods-primecarApp-primecarAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0A644BCF2BF94114AA62DCBB /* logo.png */ = {isa = PBXFileReference; name = "logo.png"; path = "../src/assets/logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CACA0DBD58B74594987EB111 /* nointernet.png */ = {isa = PBXFileReference; name = "nointernet.png"; path = "../src/assets/nointernet.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		32B9327647DC4DFEA8B23677 /* onboard1.png */ = {isa = PBXFileReference; name = "onboard1.png"; path = "../src/assets/onboard1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AA2118EB8F214572BC70CC4A /* onboard2.png */ = {isa = PBXFileReference; name = "onboard2.png"; path = "../src/assets/onboard2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				ED77D6CCF8D845CA892D71EF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +156,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		ED77D6CCF8D845CA892D71EF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				0A644BCF2BF94114AA62DCBB /* logo.png */,
+				CACA0DBD58B74594987EB111 /* nointernet.png */,
+				32B9327647DC4DFEA8B23677 /* onboard1.png */,
+				AA2118EB8F214572BC70CC4A /* onboard2.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -243,6 +264,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				4A4E61D165DF4B109F71C155 /* logo.png in Resources */,
+				C1A33830A96A4BBABAD5FC73 /* nointernet.png in Resources */,
+				6DC95E9D9A92447A9021529D /* onboard1.png in Resources */,
+				95BE1C4557F340F5A5588095 /* onboard2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

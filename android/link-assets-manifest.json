@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/logo.png",
+      "sha1": "6ba67785b8a32474d9a9254e91f533972e0fe70c"
+    },
+    {
+      "path": "src/assets/nointernet.png",
+      "sha1": "b5464a5bcdc094ad3b33f2d23bb1a138ad6d1372"
+    },
+    {
+      "path": "src/assets/onboard1.png",
+      "sha1": "9b3acd70c4ca4e3c347c26d0e32c3a06f2712021"
+    },
+    {
+      "path": "src/assets/onboard2.png",
+      "sha1": "6cf757363147562aabcc03c8c084b2b98bb04748"
+    }
+  ]
+}
