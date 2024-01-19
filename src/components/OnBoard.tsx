@@ -1,5 +1,6 @@
-import { Image, ImageProps, Text, View, StyleSheet, useWindowDimensions } from 'react-native'
+import { Image, ImageProps, Text, View, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
+import { width } from '../theme/theme'
 
 // interface onBoardProps {
 //     id: number,
@@ -9,33 +10,34 @@ import React from 'react'
 // }
 
 const OnBoard = ({ item }: any) => {
-    const { width } = useWindowDimensions()
-    let { img, desc, heading } = item.item
+
+    let { image, subtitle, title } = item.item
     return (
-        <View style={[styles.imgWrapper, { width }]}  >
-            <Image source={img} style={[styles.imgStyle, { width, resizeMode: 'contain' }]} />
+        <View className=' justify-center items-center flex-1' >
+            <Image source={image} style={{ height: width, width: width, resizeMode: 'contain' }} />
             <View style={styles.textWrapper}>
-                <Text className='font-semibold text-[22px] text-[#FF8C00] text-center max-w-[250px]'>{heading}</Text>
+                <Text className='font-bold text-[22px] text-[#FF8C00] text-center max-w-[260px]'>{title}</Text>
+                <Text className='font-normal pt-4 text-[14px] text-[#444444] justify-center items-center text-center max-w-[280px]'>{subtitle}</Text>
             </View>
+
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     imgWrapper: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        
+
     },
     imgStyle: {
-        flex: 0.7,
         justifyContent: 'center'
     },
-    textWrapper:{
-        flex:0.3,
-        paddingHorizontal:20,
-        
+    textWrapper: {
+        paddingTop: 20,
+        justifyContent:'center',
+        alignItems:'center',
+
     }
 })
 

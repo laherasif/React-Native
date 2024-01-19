@@ -18,6 +18,7 @@
 		C1A33830A96A4BBABAD5FC73 /* nointernet.png in Resources */ = {isa = PBXBuildFile; fileRef = CACA0DBD58B74594987EB111 /* nointernet.png */; };
 		6DC95E9D9A92447A9021529D /* onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B9327647DC4DFEA8B23677 /* onboard1.png */; };
 		95BE1C4557F340F5A5588095 /* onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2118EB8F214572BC70CC4A /* onboard2.png */; };
+		5AF8451119BD4ABDB74312AF /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C5B132C72A4FE893418225 /* google.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CACA0DBD58B74594987EB111 /* nointernet.png */ = {isa = PBXFileReference; name = "nointernet.png"; path = "../src/assets/nointernet.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		32B9327647DC4DFEA8B23677 /* onboard1.png */ = {isa = PBXFileReference; name = "onboard1.png"; path = "../src/assets/onboard1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AA2118EB8F214572BC70CC4A /* onboard2.png */ = {isa = PBXFileReference; name = "onboard2.png"; path = "../src/assets/onboard2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		61C5B132C72A4FE893418225 /* google.png */ = {isa = PBXFileReference; name = "google.png"; path = "../src/assets/google.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				CACA0DBD58B74594987EB111 /* nointernet.png */,
 				32B9327647DC4DFEA8B23677 /* onboard1.png */,
 				AA2118EB8F214572BC70CC4A /* onboard2.png */,
+				61C5B132C72A4FE893418225 /* google.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C1A33830A96A4BBABAD5FC73 /* nointernet.png in Resources */,
 				6DC95E9D9A92447A9021529D /* onboard1.png in Resources */,
 				95BE1C4557F340F5A5588095 /* onboard2.png in Resources */,
+				5AF8451119BD4ABDB74312AF /* google.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
