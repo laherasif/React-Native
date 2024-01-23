@@ -7,15 +7,24 @@ import PhoneInput from "react-native-phone-number-input";
 import Checkbox from '../components/CheckBox';
 import DynamicPopup from '../util/DynamicPopup';
 import VerifyOtp from '../components/Auth/VerifyOtp';
-const SignUpScreen = () => {
+import SpinnerLoader from '../util/SpinnerLoader';
+const SignUpScreen = ({navigation}:any) => {
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState<string>("");
-    const [bottomPadding, setBottomPadding] = useState<number>(10);
+    const [bottomPadding, setBottomPadding] = useState<number>(20);
     const [verify, setVerify] = useState<boolean>(false);
     const [isSelected, setSelection] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const phoneInput = useRef<PhoneInput>(null);
 
     const { height } = useWindowDimensions()
+    const handleSendVerify = () => {
+        setVerify(true)
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000);
+    }
 
     useEffect(() => {
         const keyboardDidShowListener = Keyboard.addListener(
@@ -28,7 +37,7 @@ const SignUpScreen = () => {
         const keyboardDidHideListener = Keyboard.addListener(
             'keyboardDidHide',
             () => {
-                setBottomPadding(10); // Adjust the padding value when the keyboard is closed
+                setBottomPadding(20); // Adjust the padding value when the keyboard is closed
             },
         );
 
@@ -38,8 +47,6 @@ const SignUpScreen = () => {
         };
     }, []);
 
-
-
     return (
         <>
             <KeyboardAvoidingView
@@ -48,9 +55,9 @@ const SignUpScreen = () => {
                 keyboardVerticalOffset={height}
             >
 
-                {verify && <DynamicPopup data={<VerifyOtp/>} modalVisible={verify} setModalVisible={() => setVerify(false)} />}
+                {verify && <DynamicPopup type={loading} data={ loading ? <SpinnerLoader/> : <VerifyOtp />} modalVisible={verify} setModalVisible={() => setVerify(false)} />}
 
-                <View className='bg-white flex-1 justify-center  px-5 pt-10  ' style={{ paddingBottom: bottomPadding }}>
+                <View className='bg-white flex-1 justify-center  px-5 pt-10   ' style={{ paddingBottom: bottomPadding }}>
                     <StatusBar backgroundColor={COLORS.primaryWhiteHex} barStyle={'dark-content'} />
 
                     <View style={styles.boxWrapper} className='  rounded-t-2xl  flex-1 bg-white pt-[1px]'
@@ -124,7 +131,7 @@ const SignUpScreen = () => {
                                         {/* <Text style={styles.label}>Do you like React Native?</Text> */}
                                     </View>
                                     <View className='pt-[16px]'>
-                                        <TouchableOpacity onPress={() => { }} className='bg-[#FF8C00] rounded-md w-full text-center justify-center h-[40px]'>
+                                        <TouchableOpacity onPress={() => { handleSendVerify() }} className='bg-[#FF8C00] rounded-md w-full text-center justify-center h-[40px]'>
                                             <Text className='font-semibold text-[14px] text-center items-center text-white '>Se connecter</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -132,14 +139,14 @@ const SignUpScreen = () => {
                                         <Text className=' font-normal text-[14px]  text-[#98A2B3] pb-2'>ou</Text>
                                     </View>
                                     <View className='pt-[16px]'>
-                                        <TouchableOpacity onPress={() => { setVerify(true) }} className='bg-transparent rounded-md w-full text-center items-center flex-row px-3  border h-[42px]'>
+                                        <TouchableOpacity onPress={() => { }} className='bg-transparent rounded-md w-full text-center items-center flex-row px-3  border h-[42px]'>
                                             <Image source={require('../assets/google.png')} />
                                             <Text className='font-semibold items-center max-w-[200px] mx-auto text-center justify-center text-[14px] text-[#444444] '>Continuer avec Google</Text>
                                         </TouchableOpacity>
                                     </View>
                                     <View className='pt-[16px] text-center  justify-center items-center flex-row  '>
                                         <Text className='font-normal text-[11px]  items-center text-[#444444]'>Pas de compte?</Text>
-                                        <TouchableOpacity className='pl-1' >
+                                        <TouchableOpacity className='pl-1' onPress={() => navigation.navigate('SignIn')} >
                                             <Text className='font-normal text-[11px]  text-[#0066FF] '>S’inscrire</Text>
                                         </TouchableOpacity>
                                     </View>

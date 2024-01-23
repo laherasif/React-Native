@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/car.png",
+      "sha1": "9533f6fb0ff21e841db5bf852267bd80c00f8beb"
+    },
+    {
       "path": "src/assets/google.png",
       "sha1": "92a8a06260fc0152016762a6c88ae4c9d7664a62"
     },
@@ -20,6 +24,10 @@
     {
       "path": "src/assets/onboard2.png",
       "sha1": "6cf757363147562aabcc03c8c084b2b98bb04748"
+    },
+    {
+      "path": "src/assets/vain.png",
+      "sha1": "7963b067d6a38d0a318df5b464c330754a9cd533"
     }
   ]
 }

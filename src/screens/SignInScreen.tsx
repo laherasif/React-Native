@@ -1,11 +1,29 @@
 
-import { View, Text, StatusBar, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, StatusBar, StyleSheet, Image, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { COLORS } from '../theme/theme'
 import Icon from 'react-native-vector-icons/FontAwesome';
 const SignInScreen = ({ navigation }: any) => {
+    const [loading, setLoading] = useState(false)
+
+    const handleLoader = () => {
+        setLoading(true)
+        setTimeout(() => {
+            navigation.navigate('Tab')
+            setLoading(false)
+        }, 2000);
+    }
+    if (loading) {
+        return (
+            <View className='flex-1 justify-center items-center bg-white'>
+                <Text className='text-[#444444] font-semibold text-[14px]'>Connexion</Text>
+                <ActivityIndicator size="large" color="#FF8C00" />
+            </View>
+        )
+    }
+
     return (
-        <View className='bg-white flex-1 justify-center  px-5 pt-32 pb-28'>
+        <View className='bg-white flex-1 justify-center items-center  px-5 py-20'>
             <StatusBar backgroundColor={COLORS.primaryWhiteHex} barStyle={'dark-content'} />
             <View style={styles.boxWrapper} className=' px-[16px] rounded-md flex-1 bg-white pt-[30px] '>
                 <View className=' justify-center items-center'>
@@ -27,7 +45,7 @@ const SignInScreen = ({ navigation }: any) => {
                             <Text className='font-medium text-[11px] text-[#FF8C00]'>Mot de passe oublié ?</Text>
                         </View>
                         <View className='pt-[16px]'>
-                            <TouchableOpacity onPress={() => { }} className='bg-[#FF8C00] rounded-md w-full text-center justify-center h-[40px]'>
+                            <TouchableOpacity onPress={() => { handleLoader() }} className='bg-[#FF8C00] rounded-md w-full text-center justify-center h-[40px]'>
                                 <Text className='font-semibold text-[14px] text-center items-center text-white '>Se connecter</Text>
                             </TouchableOpacity>
                         </View>

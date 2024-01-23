@@ -7,6 +7,7 @@ import SplashScreen from './src/screens/SplashScreen';
 import OnboardScreen from './src/screens/OnboardScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
+import BottomTabNavigator from './src/navigation/BottomNavigation';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ const App = () => {
           <Stack.Screen name="onBoard" options={{ animation: 'slide_from_bottom' }} component={OnboardScreen} />
           <Stack.Screen name="SignIn" options={{ animation: 'slide_from_bottom' }} component={SignInScreen} />
           <Stack.Screen name="SignUp" options={{ animation: 'slide_from_bottom' }} component={SignUpScreen} />
+          <Stack.Screen name="Tab" options={{ animation: 'slide_from_bottom' }} component={BottomTabNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
