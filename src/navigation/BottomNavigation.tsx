@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import LocationScreen from '../screens/LocationScreen';
@@ -10,15 +10,15 @@ import Fontisto from 'react-native-vector-icons/Fontisto'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-
+import TopTabNavigation from './TopTabNavigation';
+import Feather from 'react-native-vector-icons/Feather'
 
 
 const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
     return (
         <Tab.Navigator
-            screenOptions={({ route }: any) => ({
-                headerShown: false,
+            screenOptions={() => ({
                 tabBarHideOnKeyboard: false,
                 tabBarStyle: styles?.tabBarStyle,
                 tabBarActiveTintColor: COLORS.primaryOrangeHex,
@@ -31,6 +31,8 @@ const BottomTabNavigator = () => {
                 name="Recherche"
                 component={HomeScreen}
                 options={{
+                    headerShown: false,
+
                     tabBarLabel: ({ focused }) => (
                         <Text className='font-normal text-[12px]' style={{ color: focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex, marginBottom: 6 }}>
                             Recherche
@@ -47,8 +49,21 @@ const BottomTabNavigator = () => {
             />
             <Tab.Screen
                 name="Locations"
-                component={LocationScreen}
+                component={TopTabNavigation}
                 options={{
+                    headerShown: true,
+                    headerTitleAlign: 'center',
+                    headerLeft: () => {
+                        return (
+                            <View style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                                <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
+                            </View>
+                        )
+                    },
+                        headerStyle: {
+                        borderBottomWidth: 1,
+                        height:64
+                    },
                     tabBarLabel: ({ focused }) => (
                         <Text className='font-normal text-[12px]' style={{ color: focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex, marginBottom: 6 }}>
                             Locations
@@ -118,6 +133,17 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
+    },
+    bars: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 8,
+        elevation: 6,
+        marginLeft:16,
     }
 })
 

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import MapView from 'react-native-maps'
 import Feather from 'react-native-vector-icons/Feather'
@@ -6,11 +6,18 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { COLORS } from '../theme/theme'
-const HomeScreen = () => {
+import DynamicPopup from '../util/DynamicPopup'
+import SelectDate from '../components/Home/SelectDate'
+
+const {height} = Dimensions.get('window')
+
+const HomeScreen = ({navigation}:any) => {
     const [isEnabled, setIsEnabled] = useState<boolean>(false);
+    const [showDate, setShowDate] = useState<boolean>(true);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
         <View className='flex-1 bg-white'>
+           {/* {showDate  && <DynamicPopup modalVisible={showDate} data={<SelectDate/>} setModalVisible={()=> setShowDate(false)} type /> } */}
             <View style={styles.mapView} >
                 <MapView
                     style={{ flex: 1 }}
@@ -26,19 +33,19 @@ const HomeScreen = () => {
                         <View className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
                             <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
                         </View>
-                        <View className='bg-white h-[44px] px-5 items-center w-[72%] flex-row first-line: rounded-full  '>
+                        <TouchableOpacity onPress={() => {navigation.navigate('Search') }} className='bg-white h-[44px] px-5 items-center w-[72%] flex-row first-line: rounded-full  '>
                             <Ionicons name="location-sharp" size={18} color={COLORS.primaryOrangeHex} />
                             <Text className='text-[14px] pl-2 font-medium text-[#444444]'>Position actuelle</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
                         <MaterialCommunityIcons name="bell" size={24} color={COLORS.primaryOrangeHex} />
                         </View>
                     </View>
                 </View>
-                <View className='flex-1  absolute w-full top-[280px]'>
+                <View className='flex-1  absolute w-full  ' style={styles.topHeight}>
                     <View className=' mx-[16px] bg-white px-[16px]  py-[16px] ' style={styles.boxWrapper}>
                         <Text className='text-[14px] font-medium text-[#000000]'>Type de véhicule</Text>
-                        <View className='flex-row gap-3 justify-between items-center pt-2'>
+                        <View className='flex-row  justify-between items-center pt-2'>
                             <View className='flex-row w-auto py-[8px] px-[31px] h-[38px] items-center border border-[#E0E0E0]'>
                                 <Image source={require('../assets/car.png')} />
                                 <Text className='text-[14px] pl-3 font-medium text-[#444444]'>Voiture</Text>
@@ -129,6 +136,9 @@ const styles = StyleSheet.create({
         shadowRadius: 8,
         elevation: 6,
         borderRadius: 8,
+    },
+    topHeight:{
+        top : height - 500
     }
 })
 export default HomeScreen
