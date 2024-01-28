@@ -1,13 +1,13 @@
 import { View, ScrollView, Dimensions, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
-import LocationLists from '../components/Locations/locationLists'
+import ActiveLists from '../components/Actives/ActiveLists'
 import RecordNotFound from '../components/RecordNotFound'
+import NotificationsLists from '../components/Notification/NotificationsLists'
 
-const CompletedScreen = () => {
+const NotificationScreen = () => {
   const [lists, setLists] = useState([{list:""}])
   const [loading, setLoading] = useState(false)
-  const tabBottom = useBottomTabBarHeight()
 
   const { height } = Dimensions.get('window')
 
@@ -22,22 +22,21 @@ const CompletedScreen = () => {
     <ScrollView className='bg-white px-[16px] flex-1 pt-[16px]'
       showsVerticalScrollIndicator={false}
     >
-      <View style={{ marginBottom: tabBottom }}>
+      <View >
         {
-
-          !loading && lists?.length > 0 ? Array(10).fill(10).map((_, i) => (
+         !loading && lists?.length > 0 ? Array(10).fill(10).map((_, i) => (
             <View key={i} >
-              <LocationLists key={i} />
+              <NotificationsLists key={i} />
             </View>
           ))
-            :
-            <View>
+          :
+          <View>
               {loading ? (
                 <View style={{ height: height - 300 }} className='bg-white flex-1 justify-center items-center '>
                   <ActivityIndicator size={60} color="#FF8C00" />
                 </View>
               )
-                : < RecordNotFound type="location" />
+                : < RecordNotFound   />
               }
             </View>
         }
@@ -46,4 +45,4 @@ const CompletedScreen = () => {
   )
 }
 
-export default CompletedScreen
+export default NotificationScreen

@@ -4,10 +4,8 @@ import MapView from 'react-native-maps'
 import Feather from 'react-native-vector-icons/Feather'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-
 import { COLORS } from '../theme/theme'
-import DynamicPopup from '../util/DynamicPopup'
-import SelectDate from '../components/Home/SelectDate'
+import { DrawerActions } from '@react-navigation/native'
 
 const {height} = Dimensions.get('window')
 
@@ -30,16 +28,16 @@ const HomeScreen = ({navigation}:any) => {
                 />
                 <View className='absolute w-full  top-5 '>
                     <View className=' flex-row mx-[16px] justify-between items-center '>
-                        <View className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                        <TouchableOpacity onPress={() => {navigation.dispatch(DrawerActions.openDrawer())}} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
                             <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
-                        </View>
+                        </TouchableOpacity>
                         <TouchableOpacity onPress={() => {navigation.navigate('Search') }} className='bg-white h-[44px] px-5 items-center w-[72%] flex-row first-line: rounded-full  '>
                             <Ionicons name="location-sharp" size={18} color={COLORS.primaryOrangeHex} />
                             <Text className='text-[14px] pl-2 font-medium text-[#444444]'>Position actuelle</Text>
                         </TouchableOpacity>
-                        <View className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                        <TouchableOpacity onPress={() => { navigation.navigate('Notification')}} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
                         <MaterialCommunityIcons name="bell" size={24} color={COLORS.primaryOrangeHex} />
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View className='flex-1  absolute w-full  ' style={styles.topHeight}>

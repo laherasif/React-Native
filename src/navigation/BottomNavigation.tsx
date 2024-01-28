@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import LocationScreen from '../screens/LocationScreen';
+// import LocationScreen from '../screens/LocationScreen';
 import ActivateScreen from '../screens/ActivateScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { COLORS } from '../theme/theme';
@@ -12,10 +12,16 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import TopTabNavigation from './TopTabNavigation';
 import Feather from 'react-native-vector-icons/Feather'
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 
 const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
+
+    const navigation = useNavigation()
+
     return (
         <Tab.Navigator
             screenOptions={() => ({
@@ -55,14 +61,16 @@ const BottomTabNavigator = () => {
                     headerTitleAlign: 'center',
                     headerLeft: () => {
                         return (
-                            <View style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                            <TouchableOpacity
+                                onPress={() => { navigation.dispatch(DrawerActions.openDrawer()) }}
+                                style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
                                 <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
-                            </View>
+                            </TouchableOpacity>
                         )
                     },
-                        headerStyle: {
+                    headerStyle: {
                         borderBottomWidth: 1,
-                        height:64
+                        height: 64
                     },
                     tabBarLabel: ({ focused }) => (
                         <Text className='font-normal text-[12px]' style={{ color: focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex, marginBottom: 6 }}>
@@ -82,6 +90,21 @@ const BottomTabNavigator = () => {
                 name="Activité"
                 component={ActivateScreen}
                 options={{
+                    headerShown: true,
+                    headerTitleAlign: 'center',
+                    headerLeft: () => {
+                        return (
+                            <TouchableOpacity
+                                onPress={() => { navigation.dispatch(DrawerActions.openDrawer()) }}
+                                style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                                <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
+                            </TouchableOpacity>
+                        )
+                    },
+                    headerStyle: {
+                        borderBottomWidth: 1,
+                        height: 64
+                    },
                     tabBarLabel: ({ focused }) => (
                         <Text className='font-normal text-[12px]' style={{ color: focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex, marginBottom: 6 }}>
                             Activité
@@ -100,6 +123,21 @@ const BottomTabNavigator = () => {
                 name="Compte"
                 component={ProfileScreen}
                 options={{
+                    headerShown: true,
+                    headerTitleAlign: 'center',
+                    headerLeft: () => {
+                        return (
+                            <TouchableOpacity
+                                onPress={() => { navigation.dispatch(DrawerActions.openDrawer()) }}
+                                style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
+                                <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
+                            </TouchableOpacity>
+                        )
+                    },
+                    headerStyle: {
+                        borderBottomWidth: 1,
+                        height: 64
+                    },
                     tabBarLabel: ({ focused }) => (
                         <Text className='font-normal text-[12px]' style={{ color: focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex, marginBottom: 6 }}>
                             Compte
@@ -143,7 +181,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.27,
         shadowRadius: 8,
         elevation: 6,
-        marginLeft:16,
+        marginLeft: 16,
     }
 })
 

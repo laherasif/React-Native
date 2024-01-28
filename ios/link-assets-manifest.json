@@ -2,8 +2,28 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/activenot.png",
+      "sha1": "ed6d908caa02f0c774a950707a06ba554a5d18ec"
+    },
+    {
+      "path": "src/assets/avatar.png",
+      "sha1": "03e5b63e49edea878fb91bf06fdc2875d42ea063"
+    },
+    {
       "path": "src/assets/car.png",
       "sha1": "9533f6fb0ff21e841db5bf852267bd80c00f8beb"
+    },
+    {
+      "path": "src/assets/car1.png",
+      "sha1": "911e9840388f8bddb10c7641045a6872de4310d4"
+    },
+    {
+      "path": "src/assets/car2.png",
+      "sha1": "ded48387f48869f955b7bb499b7e5894e586818f"
+    },
+    {
+      "path": "src/assets/car3.png",
+      "sha1": "9d920fe7de2199bd92e1c235e268f533fc4a5e4b"
     },
     {
       "path": "src/assets/google.png",

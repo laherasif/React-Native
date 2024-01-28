@@ -23,6 +23,11 @@
 		F01BAEB04C854ABE8C9654A9 /* vain.png in Resources */ = {isa = PBXBuildFile; fileRef = 03911782CEE6406EA8585BF5 /* vain.png */; };
 		A3281BACA1974851B7E03725 /* googlepower.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CE3080CCB94D548E0EAAE7 /* googlepower.png */; };
 		A4F9F2059BB3472EB476D4F5 /* locatenot.png in Resources */ = {isa = PBXBuildFile; fileRef = 3915B0E20BD24A3E989C11B9 /* locatenot.png */; };
+		21969B8EE13D48169A3C2CB4 /* car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3D8BA6C414276977603CF /* car1.png */; };
+		EBFF270A17494F3DBF7747D4 /* car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD5B0EF3D1C41DC88FE4F07 /* car2.png */; };
+		500184C0CD3246559A2191D1 /* car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957392E5671481FBB50C908 /* car3.png */; };
+		7B6A9A7658964679A1682269 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A0A40B9DD8499484CC42A2 /* avatar.png */; };
+		16BB06E3588B45E083959543 /* activenot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CB587D7439245B1807DC6D1 /* activenot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		03911782CEE6406EA8585BF5 /* vain.png */ = {isa = PBXFileReference; name = "vain.png"; path = "../src/assets/vain.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		11CE3080CCB94D548E0EAAE7 /* googlepower.png */ = {isa = PBXFileReference; name = "googlepower.png"; path = "../src/assets/googlepower.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3915B0E20BD24A3E989C11B9 /* locatenot.png */ = {isa = PBXFileReference; name = "locatenot.png"; path = "../src/assets/locatenot.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1DF3D8BA6C414276977603CF /* car1.png */ = {isa = PBXFileReference; name = "car1.png"; path = "../src/assets/car1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1CD5B0EF3D1C41DC88FE4F07 /* car2.png */ = {isa = PBXFileReference; name = "car2.png"; path = "../src/assets/car2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6957392E5671481FBB50C908 /* car3.png */ = {isa = PBXFileReference; name = "car3.png"; path = "../src/assets/car3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A8A0A40B9DD8499484CC42A2 /* avatar.png */ = {isa = PBXFileReference; name = "avatar.png"; path = "../src/assets/avatar.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6CB587D7439245B1807DC6D1 /* activenot.png */ = {isa = PBXFileReference; name = "activenot.png"; path = "../src/assets/activenot.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +189,11 @@
 				03911782CEE6406EA8585BF5 /* vain.png */,
 				11CE3080CCB94D548E0EAAE7 /* googlepower.png */,
 				3915B0E20BD24A3E989C11B9 /* locatenot.png */,
+				1DF3D8BA6C414276977603CF /* car1.png */,
+				1CD5B0EF3D1C41DC88FE4F07 /* car2.png */,
+				6957392E5671481FBB50C908 /* car3.png */,
+				A8A0A40B9DD8499484CC42A2 /* avatar.png */,
+				6CB587D7439245B1807DC6D1 /* activenot.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -288,6 +303,11 @@
 				F01BAEB04C854ABE8C9654A9 /* vain.png in Resources */,
 				A3281BACA1974851B7E03725 /* googlepower.png in Resources */,
 				A4F9F2059BB3472EB476D4F5 /* locatenot.png in Resources */,
+				21969B8EE13D48169A3C2CB4 /* car1.png in Resources */,
+				EBFF270A17494F3DBF7747D4 /* car2.png in Resources */,
+				500184C0CD3246559A2191D1 /* car3.png in Resources */,
+				7B6A9A7658964679A1682269 /* avatar.png in Resources */,
+				16BB06E3588B45E083959543 /* activenot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
