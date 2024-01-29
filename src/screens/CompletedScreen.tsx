@@ -37,7 +37,7 @@ const CompletedScreen = () => {
                   <ActivityIndicator size={60} color="#FF8C00" />
                 </View>
               )
-                : < RecordNotFound type="location" />
+                : < RecordNotFound OuterType='' InnerType="location" />
               }
             </View>
         }

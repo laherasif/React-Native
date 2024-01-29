@@ -104,7 +104,7 @@ const HomeScreen = ({navigation}:any) => {
                         </View>
                         {/* Section 5 */}
                         <View className='pt-[16px]'>
-                            <TouchableOpacity className='bg-[#FF8C00] justify-center items-center h-[40px]'>
+                            <TouchableOpacity onPress={() => { navigation.navigate('SearchResult')}} className='bg-[#FF8C00] justify-center items-center h-[40px]'>
                                 <Text className='text-[14px] font-medium text-white '>
                                     Trouver un véhicule
                                 </Text>

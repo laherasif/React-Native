@@ -1,39 +1,30 @@
 import 'react-native-gesture-handler';
-import React from 'react'
+import React, { useState } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { store } from './src/redux/store';
-import { DrawerActions, NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import SplashScreen from './src/screens/SplashScreen';
 import OnboardScreen from './src/screens/OnboardScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather'
+import { StyleSheet } from 'react-native';
 import DrawerNavigation from './src/navigation/DrawerNavigation';
 import SearchScreen from './src/screens/SearchScreen';
-import { COLORS } from './src/theme/theme';
 import NotificationScreen from './src/screens/NotificationScreen';
+import SearchResultScreen from './src/screens/SearchResultScreen';
 
-const HeaderComponent = () => {
-  const navigation = useNavigation();
-  return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
-      <Text className=' text-[#FF8C00] font-semibold text-[14px]'>Fermer</Text>
-    </TouchableOpacity>
-  );
-};
-const LeftHeader = () => {
-  const navigation = useNavigation();
-  return (
-    <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.openDrawer()) }} style={styles.bars} className='w-[44px] h-[44px] bg-white rounded-full items-center justify-center'>
-      <Feather name="menu" size={24} color={COLORS.primaryOrangeHex} />
-    </TouchableOpacity>
-  )
-};
+import FilterScreen from './src/screens/FilterScreen';
+import UtilitiesScreen from './src/screens/UtilitiesScreen';
+import { CustomHeader, CustomRightHeader, CustomSearchHeader, CustomSearchHeaderLeft, CustomSearchHeaderRight, HeaderComponent } from './src/hooks/CustomeHooks';
+import { Text } from 'react-native-paper';
+import CarDetailScreen from './src/screens/CarDetailScreen';
+
 
 const App = () => {
+  const [changeHeader, setChangeHeader] = useState(false);
   const Stack = createNativeStackNavigator();
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -53,17 +44,58 @@ const App = () => {
               title: 'Adresse de location',
               headerLeft: () => null,
               headerTitleAlign: 'center',
-              headerRight: () => <HeaderComponent />,
+              headerRight: () => <HeaderComponent type="search" />,
             }} component={SearchScreen} />
           <Stack.Screen name="Notification"
             options={{
               title: 'Notification',
-              // headerLeft: () =>  <LeftHeader /> ,
               headerTitleAlign: 'center',
             }} component={NotificationScreen} />
+          <Stack.Screen name="SearchResult"
+            options={{
+              headerTitle: () => (
+                <CustomHeader
+                  startDate="28 Janv. 08:00"
+                  endDate="31 Janv. 22:30"
+                />
+              ),
+              headerTitleAlign: 'center',
+              headerRight: () => <CustomRightHeader />
+            }} component={SearchResultScreen} />
+
+          <Stack.Screen name="CarDetail"
+            options={{
+              title:"Mazda CX-5",
+              headerTitleAlign: 'center',
+              headerRight: () => <CustomRightHeader />
+            }} component={CarDetailScreen} />
+
+          <Stack.Screen name="Filter"
+            options={{
+              title: "Filter",
+              headerTitleAlign: 'center',
+              headerRight: () => <HeaderComponent type="filter" />
+            }} component={FilterScreen} />
+
+          <Stack.Screen name="Marque"
+            options={{
+              animation: "slide_from_bottom",
+              headerBackVisible: false,
+              headerLeft: () => (
+                <CustomSearchHeaderLeft
+                  changeHeader={changeHeader}
+                  setChangeHeader={setChangeHeader}
+                />
+              ),
+              headerTitle: () => (
+                changeHeader ? <CustomSearchHeader
+                /> : <Text className='pl-5 text-[14px] font-medium text-black'>Marque du vehicule</Text>
+              ),
+              headerRight: () => changeHeader ? null : <CustomSearchHeaderRight setChangeHeader={setChangeHeader} />
+            }} component={UtilitiesScreen} />
+
         </Stack.Navigator>
       </NavigationContainer>
-      {/* <DrawerNavigation /> */}
     </Provider>
   )
 }

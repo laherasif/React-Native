@@ -28,6 +28,7 @@
 		500184C0CD3246559A2191D1 /* car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957392E5671481FBB50C908 /* car3.png */; };
 		7B6A9A7658964679A1682269 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A0A40B9DD8499484CC42A2 /* avatar.png */; };
 		16BB06E3588B45E083959543 /* activenot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CB587D7439245B1807DC6D1 /* activenot.png */; };
+		366214A2EEF64009BF7197D4 /* carbox.png in Resources */ = {isa = PBXBuildFile; fileRef = B10983A575EF476FB2653591 /* carbox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		6957392E5671481FBB50C908 /* car3.png */ = {isa = PBXFileReference; name = "car3.png"; path = "../src/assets/car3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A8A0A40B9DD8499484CC42A2 /* avatar.png */ = {isa = PBXFileReference; name = "avatar.png"; path = "../src/assets/avatar.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6CB587D7439245B1807DC6D1 /* activenot.png */ = {isa = PBXFileReference; name = "activenot.png"; path = "../src/assets/activenot.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B10983A575EF476FB2653591 /* carbox.png */ = {isa = PBXFileReference; name = "carbox.png"; path = "../src/assets/carbox.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				6957392E5671481FBB50C908 /* car3.png */,
 				A8A0A40B9DD8499484CC42A2 /* avatar.png */,
 				6CB587D7439245B1807DC6D1 /* activenot.png */,
+				B10983A575EF476FB2653591 /* carbox.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				500184C0CD3246559A2191D1 /* car3.png in Resources */,
 				7B6A9A7658964679A1682269 /* avatar.png in Resources */,
 				16BB06E3588B45E083959543 /* activenot.png in Resources */,
+				366214A2EEF64009BF7197D4 /* carbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

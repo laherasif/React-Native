@@ -36,7 +36,7 @@ const NotificationScreen = () => {
                   <ActivityIndicator size={60} color="#FF8C00" />
                 </View>
               )
-                : < RecordNotFound   />
+                : < RecordNotFound OuterType='' InnerType=''  />
               }
             </View>
         }

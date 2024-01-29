@@ -8,7 +8,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Feather from 'react-native-vector-icons/Feather'
-
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import BottomTabNavigator from "./BottomNavigation";
 import NotificationScreen from "../screens/NotificationScreen";
 import { Switch } from "react-native-gesture-handler";
@@ -211,7 +211,7 @@ const DrawerNavigation = () => {
                     headerShadowVisible: false,
                     drawerIcon: () => (
                         <View className=" w-[25px] h-[25px] bg-[#FFF6ED] rounded-full justify-center items-center">
-                            <AntDesign name="message1" size={13} color={COLORS.primaryOrangeHex} />
+                            <FontAwesome5 name="comment-dots" size={13} color={COLORS.primaryOrangeHex} />
                         </View>
                     ),
                 }}

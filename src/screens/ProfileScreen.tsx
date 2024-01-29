@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet, Switch, ScrollView } from 'react-native'
 import React, { useState } from 'react'
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+// import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { ProfileLists } from '../partial/ProfileLists';
 import Entypo from 'react-native-vector-icons/Entypo'
 const ProfileScreen = () => {
