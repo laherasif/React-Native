@@ -7,7 +7,7 @@ const FilterScreen = ({navigation}:any) => {
     const [checked, setChecked] = useState('first');
     const [selected, setSelected] = React.useState("");
     const { width: screenWidth } = Dimensions.get('window');
-    const inputWidth = (screenWidth * 0.4) // 0.48 for 48% width and subtracting 16 for margins
+    const inputWidth = (screenWidth * 0.4) 
 
     const data = [
         { key: '1', value: 'Mobiles', disabled: true },
