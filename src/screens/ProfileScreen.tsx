@@ -1,9 +1,9 @@
-import { View, Text, Image, StyleSheet, Switch, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, Switch, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 // import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { ProfileLists } from '../partial/ProfileLists';
 import Entypo from 'react-native-vector-icons/Entypo'
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}:any) => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   // const tabBottom = useBottomTabBarHeight()
@@ -17,7 +17,7 @@ const ProfileScreen = () => {
       <View style={[styles.boxWrapper]} className='px-[16px] rounded-md flex-1 bg-white mt-[16px] pt-[16px] '>
         {
           ProfileLists?.map((list: any, index: number) => (
-            <View key={index} className='flex-row border rounded justify-between items-center p-2 mb-3 border-[#E0E0E0]'>
+            <TouchableOpacity onPress={() => navigation.navigate(list?.link) } key={index} className='flex-row border rounded justify-between items-center p-2 mb-3 border-[#E0E0E0]'>
               <Text className='font-medium text-[14px] text-[#444444]'>{list?.title}</Text>
               {list?.icon === "switch" ?
                 <Switch
@@ -30,7 +30,7 @@ const ProfileScreen = () => {
                 :
                 <Entypo name="chevron-small-right" color={"#ACACAC"} size={28} />
               }
-            </View>
+            </TouchableOpacity>
           ))}
 
       </View>

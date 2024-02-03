@@ -5,7 +5,7 @@ import { SelectList } from 'react-native-dropdown-select-list'
 import Entypo from 'react-native-vector-icons/Entypo'
 const FilterScreen = ({navigation}:any) => {
     const [checked, setChecked] = useState('first');
-    const [selected, setSelected] = React.useState("");
+    const [selected, setSelected] = useState("");
     const { width: screenWidth } = Dimensions.get('window');
     const inputWidth = (screenWidth * 0.4) 
 

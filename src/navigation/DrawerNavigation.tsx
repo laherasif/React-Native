@@ -198,17 +198,6 @@ const DrawerNavigation = () => {
                 options={{
                     drawerLabel: "Messages",
                     title: "Messages",
-                    drawerItemStyle: {
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 3,
-                        },
-                        shadowOpacity: 0.27,
-                        shadowRadius: 8,
-                        elevation: 6,
-                    },
-                    headerShadowVisible: false,
                     drawerIcon: () => (
                         <View className=" w-[25px] h-[25px] bg-[#FFF6ED] rounded-full justify-center items-center">
                             <FontAwesome5 name="comment-dots" size={13} color={COLORS.primaryOrangeHex} />

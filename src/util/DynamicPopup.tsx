@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import Modal from "react-native-modal";
-import Icon from 'react-native-vector-icons/AntDesign';
+// import Icon from 'react-native-vector-icons/AntDesign';
 interface popupProps {
     modalVisible: boolean | undefined
     setModalVisible: () => void
@@ -32,11 +32,7 @@ const DynamicPopup: React.FC<popupProps> = ({
                         </View>
                         :
                         <View style={styles.container}>
-                            <View className='flex-row justify-between items-center '>
-                                <TouchableOpacity onPress={() => setModalVisible()} className='  bg-[#777777] rounded-full'>
-                                    <Icon name="closecircle" size={20} />
-                                </TouchableOpacity>
-                            </View>
+                            
                             <View>
                                 {data}
                             </View>

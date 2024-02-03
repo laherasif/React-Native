@@ -55,7 +55,7 @@ const SignUpScreen = ({navigation}:any) => {
                 keyboardVerticalOffset={height}
             >
 
-                {verify && <DynamicPopup type={loading} data={ loading ? <SpinnerLoader/> : <VerifyOtp />} modalVisible={verify} setModalVisible={() => setVerify(false)} />}
+                {verify && <DynamicPopup type={loading} data={ loading ? <SpinnerLoader/> : <VerifyOtp setVerify={setVerify} />} modalVisible={verify} setModalVisible={() => setVerify(false)} />}
 
                 <View className='bg-white flex-1 justify-center  px-5 pt-10   ' style={{ paddingBottom: bottomPadding }}>
                     <StatusBar backgroundColor={COLORS.primaryWhiteHex} barStyle={'dark-content'} />

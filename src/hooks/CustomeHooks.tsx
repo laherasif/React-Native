@@ -1,24 +1,24 @@
 import { useNavigation } from "@react-navigation/native";
-import { TextInput, TouchableOpacity, View } from "react-native";
+import { Share, TextInput, TouchableOpacity, View } from "react-native";
 import { Text } from "react-native-paper";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Feather from 'react-native-vector-icons/Feather'
-
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 export const HeaderComponent = ({ type }: { type: string }) => {
     const navigation = useNavigation();
     return (
         <TouchableOpacity onPress={() => navigation.goBack()}>
-            {  type === "filter" ?
-            <Text className='text-[#FF8C00] font-semibold text-[14px]'>
-                Réinitialiser 
-            </Text>
-            :
-            <Text className='text-[#FF8C00] font-semibold text-[14px]'>
-                Fermer
-            </Text>
-}
+            {type === "filter" ?
+                <Text className='text-[#FF8C00] font-semibold text-[14px]'>
+                    Réinitialiser
+                </Text>
+                :
+                <Text className='text-[#FF8C00] font-semibold text-[14px]'>
+                    Fermer
+                </Text>
+            }
         </TouchableOpacity>
     );
 };
@@ -28,6 +28,42 @@ export const CustomRightHeader = () => {
     return (
         <TouchableOpacity onPress={() => navigation.navigate('Filter')} className='w-[30px] h-[30px] border-[#E0E0E0] rounded-full border justify-center items-center '>
             <MaterialCommunityIcons name="tune-variant" size={14} color={"#FF8C00"} />
+        </TouchableOpacity>
+    );
+};
+
+export const CustomRightHeaderShare = ({ setShare }: any) => {
+    const handleShare = async () => {
+        // if (!hasPermission) {
+        //     try {
+        //         const result = await Share.requestPermissionsAsync();
+        //         if (result.granted) {
+        //             AsyncStorage.setItem('sharePermission', 'granted');
+        //             setHasPermission(true);
+        //         } else {
+        //             // Permission denied
+        //             return;
+        //         }
+        //     } catch (error) {
+        //         console.error('Error requesting share permission:', error);
+        //         return;
+        //     }
+        // }
+        setShare(true)
+
+        // Now that we have permission, open the share dialog
+        try {
+            await Share.share({
+                message: '',
+            });
+        } catch (error) {
+            console.error('Error sharing:', error);
+        }
+    };
+
+    return (
+        <TouchableOpacity onPress={() => handleShare()} className='w-[30px] h-[30px] border-[#E0E0E0] justify-center items-center '>
+            <Ionicons name="share-outline" size={24} />
         </TouchableOpacity>
     );
 };
@@ -47,7 +83,7 @@ export const CustomHeader = ({ startDate, endDate }: { startDate: string, endDat
 export const CustomSearchHeader = () => {
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }} >
-            <TextInput placeholder="Search" autoFocus  />
+            <TextInput placeholder="Search" autoFocus />
         </View>
     );
 };
