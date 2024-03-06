@@ -20,7 +20,7 @@ const EditInfo = ({navigation}:any) => {
                 </View>
                 <Text className='text-[16px] font-bold text-[#444444] pt-[16px]'>Jacob Jones</Text>
             </View>
-            <View style={[styles.boxWrapper]} className='px-[16px] rounded-md flex-1 bg-white mt-[16px] pt-[16px] '>
+            <View style={[styles.boxWrapper]} className='shadow-lg border my-[16px] px-[16px] py-[16px] border-gray-100 rounded-md bg-white'>
                 {
                     EditProfileData?.map((list: any, index: number) => (
                         <TouchableOpacity onPress={() => { navigation.navigate(list?.link) }} key={index} className='flex-row border rounded justify-between items-center p-2 mb-3 border-[#E0E0E0]'>

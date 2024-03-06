@@ -1,7 +1,7 @@
 import { View, ScrollView, Dimensions, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
-import ActiveLists from '../components/Actives/ActiveLists'
+// import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
+// import ActiveLists from '../components/Actives/ActiveLists'
 import RecordNotFound from '../components/RecordNotFound'
 import NotificationsLists from '../components/Notification/NotificationsLists'
 

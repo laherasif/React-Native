@@ -16,7 +16,7 @@ import SearchResultScreen from './src/screens/SearchResultScreen';
 
 import FilterScreen from './src/screens/FilterScreen';
 import UtilitiesScreen from './src/screens/UtilitiesScreen';
-import { CustomHeader, CustomRightHeader, CustomRightHeaderShare, CustomSearchHeader, CustomSearchHeaderLeft, CustomSearchHeaderRight, HeaderComponent } from './src/hooks/CustomeHooks';
+import { CustomHeader, CustomMessageCenter, CustomMessageRight, CustomRightHeader, CustomRightHeaderShare, CustomSearchHeader, CustomSearchHeaderLeft, CustomSearchHeaderRight, HeaderComponent } from './src/hooks/CustomeHooks';
 import { Text } from 'react-native-paper';
 import CarDetailScreen from './src/screens/CarDetailScreen';
 import OwnerProfileScreen from './src/screens/OwnerProfileScreen';
@@ -29,6 +29,11 @@ import EditAddress from './src/components/EditProfile/EditAddress';
 import EditEmail from './src/components/EditProfile/EditEmail';
 import PaymentHistory from './src/screens/PaymentHistory';
 import RequestHistory from './src/screens/RequestHistory';
+import HelpCenter from './src/components/helpCenter/HelpCenter';
+import ContactUs from './src/components/helpCenter/ContactUs';
+import MessagesScreen from './src/screens/MessagesScreen';
+import ChatMessages from './src/components/Messages/ChatMessages';
+import YellowScreen from './src/components/ConvertRenterToOwner/YellowScreen';
 
 
 const App = () => {
@@ -103,6 +108,20 @@ const App = () => {
             }}
             component={RequestHistory} />
 
+          <Stack.Screen name="Helpcanter"
+            options={{
+              title: 'Centre d’aide',
+              headerTitleAlign: 'center',
+            }}
+            component={HelpCenter} />
+
+          <Stack.Screen name="ContactUs"
+            options={{
+              title: 'Centre d’aide',
+              headerTitleAlign: 'center',
+            }}
+            component={ContactUs} />
+
           {/* End Profile Screens */}
 
           {/* Search Screens */}
@@ -122,6 +141,19 @@ const App = () => {
               headerTitleAlign: 'center',
             }} component={NotificationScreen} />
           {/*End Notification Screens */}
+
+          <Stack.Screen name="Message"
+            options={{
+              title: 'Message',
+              headerTitleAlign: 'center',
+            }} component={MessagesScreen} />
+          <Stack.Screen name="ChatMessage"
+            options={{
+              headerTitle: () => (
+                <CustomMessageCenter />
+              ),
+              headerRight:() => <CustomMessageRight/>
+            }} component={ChatMessages} />
 
           <Stack.Screen name="SearchResult"
             options={{
@@ -177,6 +209,11 @@ const App = () => {
               ),
               headerRight: () => changeHeader ? null : <CustomSearchHeaderRight setChangeHeader={setChangeHeader} />
             }} component={UtilitiesScreen} />
+
+            {/* Yellow Screen */}
+            <Stack.Screen name="YellowScreen"
+            options={{ headerShown: false }} component={YellowScreen} />
+
 
         </Stack.Navigator>
       </NavigationContainer>

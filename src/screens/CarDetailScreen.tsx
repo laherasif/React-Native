@@ -36,7 +36,7 @@ const CarDetailScreen = ({ navigation }: any) => {
           <Image source={require('../assets/carbox.png')} className='rounded-md object-cover w-full ' />
         </View>
 
-        <View className='rounded shadow-md bg-white px-[16px] py-[16px]'>
+        <View className='rounded shadow-md bg-white px-[16px] py-[16px] border border-gray-100'>
           <View className='flex-row justify-between items-center'>
             <TouchableOpacity onPress={() => navigation.navigate('OwnerInfo')} className='flex-row gap-[22px] items-center'>
               <View className='bg-[#D9D9D9] w-[53px] h-[53px] rounded-lg'></View>
@@ -56,7 +56,7 @@ const CarDetailScreen = ({ navigation }: any) => {
           </View>
         </View>
         {/* Description */}
-        <View className='rounded shadow-md bg-white px-[16px] py-[16px] mt-[16px] '>
+        <View className='rounded shadow-md bg-white px-[16px] py-[16px] mt-[16px] border border-gray-100 '>
           <Text className='text-[16px] font-bold text-black'>Description</Text>
           <Text className='text-[14px] font-normal text-[#ACACAC] pt-[16px]'>
             Renault est connu pour son rôle dans le sport automobile, en particulier le rallye, la Formule 1 et la Formule E. Ses premiers travaux sur la modélisation mathématique des courbes pour les carrosseries automobiles sont importants dans l'histoire de l'infographie.</Text>
@@ -78,7 +78,7 @@ const CarDetailScreen = ({ navigation }: any) => {
           </View>
         </View>
 
-        <View className='rounded  shadow-md bg-white px-[16px] py-[16px] mt-[16px] '>
+        <View className='rounded  shadow-md bg-white px-[16px] py-[16px] mt-[16px] border border-gray-100 '>
           <Text className='text-[16px] font-bold text-black'>Détails</Text>
           {
             Array(5).fill(5).map((_, index: number) => (
@@ -89,7 +89,7 @@ const CarDetailScreen = ({ navigation }: any) => {
             ))}
         </View>
 
-        <View className='rounded  shadow-md bg-white px-[16px] py-[16px] mt-[16px] '>
+        <View className='rounded  shadow-md bg-white px-[16px] py-[16px] mt-[16px] border border-gray-100 '>
           {
             Array(2).fill(2).map((_, index: number) => (
               <View key={index} className='flex-row justify-between items-center pt-[16px]'>

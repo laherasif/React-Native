@@ -12,7 +12,7 @@ const EditPersonalInfo = () => {
   return (
     <View className='flex-1'>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}  className='bg-white  px-[16px] py-[16px] ' >
-        <View className='px-[16px] rounded-md flex-1 bg-white mt-[16px] py-[16px] shadow-md '>
+        <View className='px-[16px] rounded-md flex-1 bg-white mt-[16px] py-[16px] shadow-md h-auto  '>
           <View className=''>
             <Text className=' font-normal text-[14px] text-[#98A2B3] pb-1'>Prénom</Text>
             <TextInput placeholder='Prénom*' className='border rounded-md h-[40px] border-[#E0E0E0] px-2' />
@@ -32,7 +32,6 @@ const EditPersonalInfo = () => {
               save="value"
             />
           </View>
-
         </View>
       </ScrollView>
       <View className='absolute bottom-5   w-full '>

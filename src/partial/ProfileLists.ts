@@ -33,7 +33,7 @@ export const ProfileLists = [
     {
         id:6,
         title: "Centre d’aide",
-        link: "",
+        link: "Helpcanter",
         icon: "right"
     },
 ]

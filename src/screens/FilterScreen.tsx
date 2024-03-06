@@ -47,25 +47,25 @@ const FilterScreen = ({navigation}:any) => {
                     <Text className='font-medium text-[14px] text-[#000000]'>Coût de la location</Text>
                     <View className='flex-row justify-between items-center gap-2 pt-[16px]'>
                         <TouchableOpacity onPress={() => setChecked('first')}>
-                            <View className=' pr-4 border py-[2px] flex-row items-center border-[#E0E0E0] rounded'>
+                            <View className='  border py-[2px] flex-row items-center border-[#E0E0E0] rounded' style={{ flexDirection: 'row', width: inputWidth }}>
                                 <RadioButton
                                     value="first"
                                     status={checked === 'first' ? 'checked' : 'unchecked'}
                                     onPress={() => setChecked('first')}
                                     color='#FF8C00'
                                 />
-                                <Text style={{ fontFamily: 'medium', fontSize: 14, marginLeft: 10, color: checked === "second" ? '#000000' : '#ACACAC' }}>Avec chauffeur</Text>
+                                <Text style={{ fontFamily: 'medium', fontSize: 14, marginLeft: 5, color: checked === "second" ? '#000000' : '#ACACAC' }}>Avec chauffeur</Text>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => setChecked('second')}>
-                            <View className=' pr-3 border py-[2px] flex-row items-center border-[#E0E0E0] rounded'>
+                            <View className='  border py-[2px] flex-row items-center border-[#E0E0E0] rounded' style={{ flexDirection: 'row', width: inputWidth }}>
                                 <RadioButton
                                     value="second"
                                     status={checked === 'second' ? 'checked' : 'unchecked'}
                                     onPress={() => setChecked('second')}
                                     color='#FF8C00'
                                 />
-                                <Text style={{ fontFamily: 'medium', fontSize: 14, marginLeft: 10, color: checked === "second" ? '#000000' : '#ACACAC' }}>Avec chauffeur</Text>
+                                <Text style={{ fontFamily: 'medium', fontSize: 14, marginLeft: 5, color: checked === "second" ? '#000000' : '#ACACAC' }}>Avec chauffeur</Text>
                             </View>
                         </TouchableOpacity>
                     </View>

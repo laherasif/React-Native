@@ -1,10 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
-import { Share, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Share, TextInput, TouchableOpacity, View } from "react-native";
 import { Text } from "react-native-paper";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Feather from 'react-native-vector-icons/Feather'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import FontAwesome6Icon from "react-native-vector-icons/FontAwesome6";
+import { COLORS } from "../theme/theme";
 
 export const HeaderComponent = ({ type }: { type: string }) => {
     const navigation = useNavigation();
@@ -113,4 +115,32 @@ export const CustomSearchHeaderLeft = ({ changeHeader, setChangeHeader }: any) =
         </TouchableOpacity>
     );
 };
+
+// Message center and right section
+
+export const CustomMessageCenter = () => {
+    return (
+        <View className="flex-row items-center gap-3">
+            <Image source={require('../assets/avatar.png')} className="w-[39px] h-[39px]" />
+            <View>
+                <Text className="text-[#444444] font-semibold text-[14px]">Florencio Dorrance</Text>
+                <View className="flex-row items-center gap-2">
+                    <View className='border border-white rounded w-[10px] h-[10px] bg-[#06A551] '></View>
+                    <Text className="text-[#98A2B3] font-normal text-[10px]">En ligne</Text>
+                </View>
+            </View>
+        </View>
+    );
+};
+
+export const CustomMessageRight = () => {
+    return (
+        <View>
+            <View className='bg-[#FFF8EF] justify-center items-center w-[45px] h-[45px] rounded-lg'>
+                <FontAwesome6Icon name="phone-volume" size={20} color={COLORS.primaryOrangeHex} />
+              </View>
+        </View>
+    )
+}
+
 

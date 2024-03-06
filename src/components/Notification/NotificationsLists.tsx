@@ -9,7 +9,7 @@ interface locationPrpops {
 const NotificationsLists: FC<locationPrpops> = () => {
     return (
         <View >
-            <View className='shadow-md p-[16px] mb-[16px] '  >
+            <View className='shadow-lg border mb-[16px] px-[16px] py-[16px] border-gray-100 rounded-md bg-white '  >
                 <View className='flex-row items-center gap-[11px]'>
                     <View className=''>
                         <Image source={require('../../assets/car1.png')} className='w-[65px] h-[65px] rounded-full' />

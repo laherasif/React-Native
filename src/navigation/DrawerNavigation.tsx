@@ -14,6 +14,7 @@ import NotificationScreen from "../screens/NotificationScreen";
 import { Switch } from "react-native-gesture-handler";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import ProfileScreen from "../screens/ProfileScreen";
+import MessagesScreen from "../screens/MessagesScreen";
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
@@ -42,6 +43,16 @@ const DrawerNavigation = () => {
         )
     };
 
+
+    const LeftHeaderMessages = () => {
+        const navigation = useNavigation();
+        return (
+            <TouchableOpacity onPress={() => { navigation.goBack() }}
+                style={styles.bars} className='  items-center justify-center'>
+                <AntDesign name="arrowleft" size={24} color={COLORS.primaryBlackHex} />
+            </TouchableOpacity>
+        )
+    };
     return (
         <Drawer.Navigator
 
@@ -196,15 +207,18 @@ const DrawerNavigation = () => {
             <Drawer.Screen
                 name="Messages"
                 options={{
+                    headerShown: true,
                     drawerLabel: "Messages",
                     title: "Messages",
+                    headerTitleAlign: 'center',
+                    headerLeft: () => <LeftHeaderMessages />,
                     drawerIcon: () => (
                         <View className=" w-[25px] h-[25px] bg-[#FFF6ED] rounded-full justify-center items-center">
                             <FontAwesome5 name="comment-dots" size={13} color={COLORS.primaryOrangeHex} />
                         </View>
                     ),
                 }}
-                component={NotificationScreen}
+                component={MessagesScreen}
             />
             <Drawer.Screen
                 name="Mesdemandes"
@@ -232,7 +246,7 @@ const DrawerNavigation = () => {
                         </View>
                     ),
                 }}
-                component={NotificationScreen}
+                component={MessagesScreen}
             />
             <Drawer.Screen
                 name="Historique"

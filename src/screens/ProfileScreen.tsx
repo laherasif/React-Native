@@ -3,10 +3,15 @@ import React, { useState } from 'react'
 // import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { ProfileLists } from '../partial/ProfileLists';
 import Entypo from 'react-native-vector-icons/Entypo'
-const ProfileScreen = ({navigation}:any) => {
+import YellowScreen from '../components/ConvertRenterToOwner/YellowScreen';
+const ProfileScreen = ({ navigation }: any) => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => {
+    navigation.navigate('YellowScreen')
+  }
   // const tabBottom = useBottomTabBarHeight()
+
+ 
 
   return (
     <ScrollView className='bg-white flex-1 px-[16px]' >
@@ -14,10 +19,10 @@ const ProfileScreen = ({navigation}:any) => {
         <Image source={require('../assets/avatar.png')} className='rounded-full w-[102px] h-[102px]' />
         <Text className='text-[16px] font-bold text-[#444444] pt-[16px]'>Jacob Jones</Text>
       </View>
-      <View style={[styles.boxWrapper]} className='px-[16px] rounded-md flex-1 bg-white mt-[16px] pt-[16px] '>
+      <View style={[styles.boxWrapper]} className='shadow-lg border my-[16px] px-[16px] py-[16px] border-gray-100 rounded-md bg-white'>
         {
           ProfileLists?.map((list: any, index: number) => (
-            <TouchableOpacity onPress={() => navigation.navigate(list?.link) } key={index} className='flex-row border rounded justify-between items-center p-2 mb-3 border-[#E0E0E0]'>
+            <TouchableOpacity onPress={() => navigation.navigate(list?.link)} key={index} className='flex-row border rounded justify-between items-center p-2 mb-3 border-[#E0E0E0]'>
               <Text className='font-medium text-[14px] text-[#444444]'>{list?.title}</Text>
               {list?.icon === "switch" ?
                 <Switch

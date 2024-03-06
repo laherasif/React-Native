@@ -10,7 +10,7 @@ const LocationLists: FC<locationPrpops> = () => {
   
     return (
         <TouchableOpacity onPress={() => { }} >
-            <View className='shadow-md p-[16px] mb-[16px]' >
+            <View className='shadow-lg border mb-[16px] px-[16px] py-[16px] border-gray-100 rounded-md bg-white' >
                 <View className='flex-row justify-between items-center'>
                     <View className='flex-row gap-[11px]'>
                         <Image source={require('../../assets/car1.png')} className='w-[65px] h-[65px]' />
